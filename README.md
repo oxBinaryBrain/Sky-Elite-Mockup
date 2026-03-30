@@ -1,73 +1,112 @@
-# React + TypeScript + Vite
+# SkyElite — Premium Private Jet Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive landing page for a luxury private aviation service. Built with React, TypeScript, and Tailwind CSS.
 
-Currently, two official plugins are available:
+![React](https://img.shields.io/badge/React-19-blue?logo=react&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue?logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.4-38BDF8?logo=tailwindcss&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Live Preview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Then open [http://localhost:5173](http://localhost:5173) in your browser.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Features
+
+| Section | Description |
+|---------|-------------|
+| **Hero** | Full-screen video background with autoplay, muted, looping. Dark overlay with headline and CTA buttons |
+| **Navigation** | Fixed navbar that transitions from transparent to white on scroll. Mobile hamburger menu |
+| **Story** | Brand narrative with statistics (500+ aircraft, 50K+ flights, 98% satisfaction) |
+| **Rates** | Three-tier pricing cards — Light, Midsize, and Heavy Jets with feature lists |
+| **Benefits** | Four feature cards with icons plus a dark stats bar |
+| **FAQ** | Accordion-style frequently asked questions with expand/collapse |
+| **Footer** | Four-column layout with brand, links, services, and contact information |
+
+---
+
+## Tech Stack
+
+- **React 19** — UI library
+- **TypeScript** — Type safety
+- **Vite** — Build tool and dev server
+- **Tailwind CSS** — Utility-first CSS framework
+- **Lucide React** — Icon library
+
+---
+
+## Project Structure
+
 ```
+src/
+├── components/
+│   ├── Navigation.tsx    # Sticky navbar with scroll detection
+│   ├── Hero.tsx          # Video hero with CTA
+│   ├── Story.tsx         # About section with stats
+│   ├── Rates.tsx         # Pricing tier cards
+│   ├── Benefits.tsx      # Feature grid + stats bar
+│   ├── FAQ.tsx           # Accordion FAQ
+│   └── Footer.tsx        # Site footer
+├── App.tsx               # Main layout composition
+├── main.tsx              # Entry point
+└── index.css             # Tailwind directives + Inter font
+```
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/oxBinaryBrain/Sky-Elite-Mockup.git
+
+# Navigate to project
+cd Sky-Elite-Mockup
+
+# Install dependencies
+npm install
+
+# Start dev server
+npm run dev
+```
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+Output is generated in the `dist/` directory.
+
+---
+
+## Design System
+
+| Token | Value |
+|-------|-------|
+| Primary color | `#202A36` |
+| Font family | Inter (Google Fonts) |
+| Border radius | Full (buttons), 1rem (cards) |
+| Max width | `7xl` (80rem) |
+| Breakpoints | `md` (768px), `lg` (1024px) |
+
+---
+
+## License
+
+This project is for demonstration purposes.
